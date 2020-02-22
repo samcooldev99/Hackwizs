@@ -1,0 +1,14 @@
+<div fxLayout fxLayoutAlign="center center" fxLayoutGap="32px" style="height: 100%">
+  <form [formGroup]="infoForm" fxLayout="column" fxLayoutAlign="center center">
+    <h1>Enter your company details</h1>
+    <mat-form-field appearance="outline">
+      <input matInput placeholder="Enter Business Name" formControlName="business_name">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <input matInput placeholder="Enter Business Address" formControlName="business_address">
+    </mat-form-field>
+    <input type="file" placeholder="Upload GST File" (change)="onGSTUpload($event.target.files[0])">
+    <input type="file" placeholder="Upload Sales History File">
+    <button mat-raised-button color="primary" (click)="updateBusinessInfo()">Continue</button>
+  </form>
+</div>

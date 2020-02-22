@@ -1,0 +1,14 @@
+<div fxLayout fxLayoutAlign="center center" fxLayoutGap="32px" style="height: 100%">
+  <form [formGroup]="loginForm" fxLayout="column" fxLayoutAlign="center center">
+    <h1>Login</h1>
+    <mat-form-field appearance="outline">
+      <input matInput placeholder="Enter your email" formControlName="username">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <input matInput placeholder="Enter your password" type="password" formControlName="password">
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="login()">Login</button>
+  </form>
+  <mat-divider vertical style="height: 320px; border-right-width: 3px"></mat-divider>
+  <button mat-button color="primary" routerLink="/auth/register">Don't Have an Account? Create One.</button>
+</div>

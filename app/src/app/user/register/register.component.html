@@ -1,0 +1,17 @@
+<div fxLayout fxLayoutAlign="center center" fxLayoutGap="32px" style="height: 100%">
+  <form [formGroup]="registerForm" fxLayout="column" fxLayoutAlign="center center">
+    <h1>Register</h1>
+    <mat-form-field appearance="outline">
+      <input matInput placeholder="Enter your email" formControlName="email">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <input matInput placeholder="Enter your mobile Number" formControlName="mobile_number">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <input matInput placeholder="Enter your password" type="password" formControlName="password">
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="register()">Register</button>
+  </form>
+  <mat-divider vertical style="height: 320px; border-right-width: 3px"></mat-divider>
+  <button mat-button color="primary" routerLink="/auth/">Already a user? Login</button>
+</div>

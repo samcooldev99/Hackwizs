@@ -1,0 +1,7 @@
+venv/
+__pycache__
+app/node_modules/
+.idea/
+app/.idea/
+db.sqlite3
+
