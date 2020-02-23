@@ -8,6 +8,7 @@
       <input matInput placeholder="Enter Business Address" formControlName="business_address">
     </mat-form-field>
     <input type="file" placeholder="Upload GST File" (change)="onGSTUpload($event.target.files[0])">
+    {{ infoForm.get('gst_number').value }}
     <input type="file" placeholder="Upload Sales History File">
     <button mat-raised-button color="primary" (click)="updateBusinessInfo()">Continue</button>
   </form>
