@@ -19,6 +19,4 @@ class FileUploadView(APIView):
             "Ocp-Apim-Subscription-Key": "fde694ab4b164dc3b019f05b9ec9ed17",
             "Content-Type": "application/json"
         })
-        return Response({
-            "gst_number": response.json()["regions"][1]["lines"][0]["words"][0]["text"]
-        })
+        return Response(response.json())
