@@ -20,6 +20,5 @@ class FileUploadView(APIView):
             "Content-Type": "application/json"
         })
         return Response({
-            "image_url": "http://157.56.177.45/{}".format(file_serializer.data["file"]),
-            "response": response.json()
+            "gst_number": response.json()["regions"][1]["lines"][0]["words"][0]["text"]
         })
