@@ -50,7 +50,7 @@ export class BusinessInfoComponent implements OnInit {
         this.infoForm.patchValue({
           gst_number: response.body.gst_number
         });
-        console.log(response);
+        console.log(response.body.gst_number);
       }
     }, error => {
       console.log(error);
