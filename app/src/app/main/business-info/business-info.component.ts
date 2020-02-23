@@ -47,7 +47,7 @@ export class BusinessInfoComponent implements OnInit {
     this.userService.uploadImage(file).subscribe( (response: any) => {
       spinnerRef.close();
       this.infoForm.patchValue({
-        gst_number: response.gst_number
+        gst_number: response.body.gst_number
       });
       console.log(response);
     }, error => {
