@@ -44,8 +44,11 @@ export class BusinessInfoComponent implements OnInit {
 
   onGSTUpload(file) {
     const spinnerRef = spinner.showSpinner(this.matDialog);
-    this.userService.uploadImage(file).subscribe( response => {
+    this.userService.uploadImage(file).subscribe( (response: any) => {
       spinnerRef.close();
+      this.infoForm.patchValue({
+        gst_number: response.gst_number
+      });
       console.log(response);
     }, error => {
       console.log(error);
