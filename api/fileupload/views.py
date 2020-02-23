@@ -14,9 +14,11 @@ class FileUploadView(APIView):
         if file_serializer.is_valid():
             file_serializer.save()
         response = requests.post("https://hackwizsvision.cognitiveservices.azure.com/vision/v2.0/ocr?detectOrientation=true&language=en", json={
-            "url": file_serializer.data["file"]
+            "url": "http://157.56.177.45/{}".format(file_serializer.data["file"])
         }, headers={
             "Ocp-Apim-Subscription-Key": "fde694ab4b164dc3b019f05b9ec9ed17",
             "Content-Type": "application/json"
         })
-        return Response(file_serializer.data)
+        return Response({
+            "gst_number": response.json()["regions"][1]["lines"][0]["words"][0]["text"]
+        })
