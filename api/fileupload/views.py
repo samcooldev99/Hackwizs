@@ -19,4 +19,4 @@ class FileUploadView(APIView):
             "Ocp-Apim-Subscription-Key": "fde694ab4b164dc3b019f05b9ec9ed17",
             "Content-Type": "application/json"
         })
-        return Response(response.json())
+        return Response(file_serializer.data)
